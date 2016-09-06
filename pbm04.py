@@ -25,4 +25,4 @@ def isPalindrome(num):
 	else:
 		return False
 
-print main()
+main()
