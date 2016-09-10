@@ -1,7 +1,7 @@
 # Project Euler Solutions 
 # Edward Barthelemy
 # A good warmup back into it
-# Finished 09/02/16
+# Finished 09/10/16
 # The first 6 prime numbers are 2,3,5,7,11,13.  Find the 10001 prime number
 
 #discovered the all loop, avoiding iteration with invalid factor
