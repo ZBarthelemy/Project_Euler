@@ -21,8 +21,8 @@ def singleDigitLength(n):
 
 def teen(n):
 	if n == 11 or n == 12: return 6
-	elif n == 16: return 7
-	elif n ==13 or n == 14 or n == 15 or n == 18 or n == 19: return 8
+	elif n == 16 or n == 15: return 7
+	elif n ==13 or n == 14 or n == 18 or n == 19: return 8
 	elif n == 17: return 9
 	else: return 0
 
@@ -59,13 +59,17 @@ for i in range(1,1001):
 			foo += decaDigitLength(deca)
 	elif i < 1000:
 		substring = str(i)
+		teens = int(substring[1]+""+substring[2])
 		hecto = int(substring[0])
 		deca = int(substring[1])
 		single = int(substring[2])
 
-		#handling the and
+		#handling the and teens
 		if deca != 0: 
-			foo += singleDigitLength(hecto)+hundred()+decaDigitLength(deca)+singleDigitLength(single)+3
+			if deca > 1:
+				foo += singleDigitLength(hecto)+hundred()+3+decaDigitLength(deca)+singleDigitLength(single)
+			if deca == 1:
+				foo += singleDigitLength(hecto)+hundred()+3+teen(teens)
 		else :
 			foo += singleDigitLength(hecto)+hundred()+decaDigitLength(deca)+singleDigitLength(single)
 	elif i == 1000: foo += thousand()
