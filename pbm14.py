@@ -12,7 +12,7 @@
 # WHICH starting number, under one million, produces the longest chain?
 
 # There exist more efficient soltions to do this but 1 million is not such a big number for this type of sequence.
-from array import array
+# The solutions online state caching solutions is fastest methodself
 
 def CollatzPath(n):
 	count = 0 
