@@ -24,6 +24,7 @@ def teen(n):
 	elif n == 16 or n == 15: return 7
 	elif n ==13 or n == 14 or n == 18 or n == 19: return 8
 	elif n == 17: return 9
+	elif n == 10: return 3
 	else: return 0
 
 def decaDigitLength(n):
@@ -64,14 +65,14 @@ for i in range(1,1001):
 		deca = int(substring[1])
 		single = int(substring[2])
 
-		#handling the and teens
-		if deca != 0: 
-			if deca > 1:
-				foo += singleDigitLength(hecto)+hundred()+3+decaDigitLength(deca)+singleDigitLength(single)
-			if deca == 1:
-				foo += singleDigitLength(hecto)+hundred()+3+teen(teens)
-		else :
-			foo += singleDigitLength(hecto)+hundred()+decaDigitLength(deca)+singleDigitLength(single)
+		if deca == 0 and single != 0:
+			foo += singleDigitLength(hecto)+hundred()+3+singleDigitLength(single)
+		elif deca == 1:
+			foo += singleDigitLength(hecto)+hundred()+3+teen(teens)
+		elif deca > 1 and single == 0:
+			foo += singleDigitLength(hecto)+hundred()+3+decaDigitLength(deca)
+		elif deca > 1 and single != 0:
+			foo += singleDigitLength(hecto)+hundred()+3+decaDigitLength(deca)+singleDigitLength(single)
 	elif i == 1000: foo += thousand()
 
 print foo
